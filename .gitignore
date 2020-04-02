@@ -25,3 +25,5 @@ hs_err_pid*
 .attach_pid171814
 **.iml
 .idea/
+ldap/
+target/

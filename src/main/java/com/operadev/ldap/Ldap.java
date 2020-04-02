@@ -1,4 +1,4 @@
-package com.operadev.ldap;
+package main.java.com.operadev.ldap;
 
 import javax.naming.Context;
 import javax.naming.NamingException;
@@ -8,20 +8,17 @@ import java.util.Hashtable;
 
 public class Ldap {
     public static void main( String[] args ){
-        System.out.println(System.getProperty("user.dir"));
-        System.out.println( "Hello World!" );
         String keystorePath = System.getProperty("user.dir") + "/keystore.jks";
         System.setProperty("javax.net.ssl.keyStore", keystorePath);
 
-        // Password of your java keystore. Default value is : changeit
         System.setProperty("javax.net.ssl.keyStorePassword", "password");
 
         Hashtable<String, String> env = new Hashtable<String, String>();
-        env.put(Context.PROVIDER_URL, "ldaps://directory.colostate.edu:389");
+        env.put(Context.PROVIDER_URL, "ldap://localhost:389");
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
         env.put(Context.SECURITY_AUTHENTICATION, "simple");
-        env.put(Context.SECURITY_PRINCIPAL, "cn=radouane,ou=people,o=RoufidTutorials,c=fr");
-        env.put(Context.SECURITY_CREDENTIALS, "password");
+        env.put(Context.SECURITY_PRINCIPAL, "cn=admin,dc=operadev,dc=com");
+        env.put(Context.SECURITY_CREDENTIALS, "P@ss1W0Rd!");
 
         try {
             // Openning the connection

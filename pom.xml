@@ -20,7 +20,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.operadev.ldap.Ldap</mainClass>
+                            <mainClass>main.java.com.operadev.ldap.Ldap</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
